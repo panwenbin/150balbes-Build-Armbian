@@ -716,8 +716,8 @@ download_toolchain()
 	cd $SRC/cache/toolchains/
 
 	display_alert "Downloading" "$dirname"
-	curl -Lf --progress-bar $url -o $filename
-	curl -Lf --progress-bar ${url}.asc -o ${filename}.asc
+	curl -k -Lf --progress-bar $url -o $filename
+	curl -k -Lf --progress-bar ${url}.asc -o ${filename}.asc
 
 	local verified=false
 
