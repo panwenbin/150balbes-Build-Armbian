@@ -18,7 +18,7 @@ compile += KERNEL_EXPORT_DEFCONFIG=yes
 
 compile += BRANCH=default
 compile += BUILD_KSRC=no
-compile += EXPERT=no
+compile += EXPERT=yes
 
 
 compile += ARMBIANSERVER="mirrors.miwifi.io/armbian"
