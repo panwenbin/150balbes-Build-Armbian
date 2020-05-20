@@ -262,8 +262,8 @@ else
 	IMAGE_TYPE=user-built
 fi
 
-compile_sunxi_tools
-install_rkbin_tools
+# compile_sunxi_tools
+# install_rkbin_tools
 
 BOOTSOURCEDIR=$BOOTDIR/${BOOTBRANCH##*:}
 LINUXSOURCEDIR=$KERNELDIR/${KERNELBRANCH##*:}
