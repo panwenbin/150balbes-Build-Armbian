@@ -23,6 +23,7 @@ compile += EXPERT=no
 
 compile += ARMBIANSERVER="mirrors.miwifi.io/armbian"
 compile += UBUNTU_MIRROR="mirrors.cloud.tencent.com/ubuntu-ports/"
+compile += NAMESERVER="8.8.8.8"
 
 
 
