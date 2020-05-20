@@ -5,7 +5,7 @@
          return 0;
      }
 +
-+    if (!of_find_node_by_path("/partitions"))
++    // if (!of_find_node_by_path("/partitions"))
 +        return 0;
 +
      store_device = host->storage_flag;
