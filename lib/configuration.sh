@@ -210,7 +210,7 @@ esac
 
 
 DEBIAN_MIRROR='httpredir.debian.org/debian'
-UBUNTU_MIRROR='ports.ubuntu.com/'
+UBUNTU_MIRROR="${UBUNTU_MIRROR:-ports.ubuntu.com/}"
 
 # For user override
 if [[ -f $SRC/userpatches/lib.config ]]; then
