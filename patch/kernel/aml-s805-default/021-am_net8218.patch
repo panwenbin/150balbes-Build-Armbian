@@ -1,0 +1,49 @@
+--- a/drivers/amlogic/ethernet/am_net8218.c
++++ b/drivers/amlogic/ethernet/am_net8218.c
+@@ -117,7 +117,7 @@
+ static unsigned int g_ethernet_registered = 0;
+ static unsigned int g_mac_addr_setup = 0;
+ static unsigned int g_mac_pmt_enable = 0;
+-static char DEFMAC[] = "\x00\x01\x23\xcd\xee\xaf";
++static char DEFMAC[] = "\xb0\xd5\x9d\x00\x00\x01";
+ 
+ #define PERIPHS_SET_BITS(reg, mask)	\
+ 	aml_set_reg32_mask(reg, mask)
+@@ -938,15 +938,15 @@
+ 
+ 	writel(1, (void*)(np->base_addr + ETH_DMA_0_Bus_Mode));
+ 	writel(0x00100800,(void*)(np->base_addr + ETH_DMA_0_Bus_Mode));
+-	printk("--1--write mac add to:");
+-
+-	data_dump(ndev->dev_addr, 6);
+-#if defined (CONFIG_AML_NAND_KEY) || defined (CONFIG_SECURITYKEY)
+-        if (!g_mac_addr_setup)
+-		read_mac_from_nand(ndev);
+-#endif
+-	printk("--2--write mac add to:");
+-	data_dump(ndev->dev_addr, 6);
++	// printk("--1--write mac add to:");
++
++	// data_dump(ndev->dev_addr, 6);
++// #if defined (CONFIG_AML_NAND_KEY) || defined (CONFIG_SECURITYKEY)
++//         if (!g_mac_addr_setup)
++// 		read_mac_from_nand(ndev);
++// #endif
++// 	printk("--2--write mac add to:");
++// 	data_dump(ndev->dev_addr, 6);
+ 	write_mac_addr(ndev, ndev->dev_addr);
+ 
+ 	val = 0xc80c |		//8<<8 | 8<<17; //tx and rx all 8bit mode;
+@@ -1772,9 +1772,9 @@
+ 		netdev_for_each_mc_addr(ha, dev) {
+ 			addr = ha->addr;
+ 			hash_id = phy_mc_hash(addr);
+-			printk("add mac address:%02x:%02x:%02x:%02x:%02x:%02x,bit=%d\n",
+-			       addr[0], addr[1], addr[2], addr[3], addr[4], addr[5],
+-			       hash_id);
++			// printk("add mac address:%02x:%02x:%02x:%02x:%02x:%02x,bit=%d\n",
++			//        addr[0], addr[1], addr[2], addr[3], addr[4], addr[5],
++			//        hash_id);
+ 
+ 			if (hash_id > 31) {
+ 				hash[1] |= 1 << (hash_id - 32);

@@ -1,0 +1,10 @@
+--- a/drivers/net/ethernet/stmicro/stmmac/stmmac_platform.c
++++ b/drivers/net/ethernet/stmicro/stmmac/stmmac_platform.c
+@@ -85,7 +85,7 @@
+ 	return 1;
+ }
+ 
+-__setup("mac=", mac_addr_set);
++// __setup("mac=", mac_addr_set);
+ #endif
+ #ifdef CONFIG_OF

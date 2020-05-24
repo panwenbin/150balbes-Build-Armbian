@@ -1,0 +1,12 @@
+--- a/drivers/amlogic/ethernet/phy/am_rtl8211f.c
++++ b/drivers/amlogic/ethernet/phy/am_rtl8211f.c
+@@ -72,6 +72,9 @@
+         val =  phy_read(phydev, 0x15);
+         phy_write(phydev, 0x15,val| 1<<21);
+ */
++	phy_write(phydev, 0x1f, 0xd04);
++	phy_write(phydev, 0x10, 0x17b);  /* Set green LED for Link, yellow LED for Active */
++	phy_write(phydev, 0x1f, 0x0);
+ 	return 0;
+ 	/* Enable Auto Power Saving mode */
+ 
