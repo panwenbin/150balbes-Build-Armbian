@@ -785,25 +785,25 @@ prepare_host()
 	# download external Linaro compiler and missing special dependencies since they are needed for certain sources
 
 	local toolchains=(
-		"https://dl.armbian.com/_toolchains/gcc-linaro-aarch64-none-elf-4.8-2013.11_linux.tar.xz"
-		"https://dl.armbian.com/_toolchains/gcc-linaro-arm-none-eabi-4.8-2014.04_linux.tar.xz"
-		"https://dl.armbian.com/_toolchains/gcc-linaro-arm-linux-gnueabihf-4.8-2014.04_linux.tar.xz"
-		"https://dl.armbian.com/_toolchains/gcc-linaro-4.9.4-2017.01-x86_64_aarch64-linux-gnu.tar.xz"
-		"https://dl.armbian.com/_toolchains/gcc-linaro-4.9.4-2017.01-x86_64_arm-linux-gnueabi.tar.xz"
-		"https://dl.armbian.com/_toolchains/gcc-linaro-4.9.4-2017.01-x86_64_arm-linux-gnueabihf.tar.xz"
-		"https://dl.armbian.com/_toolchains/gcc-linaro-5.5.0-2017.10-x86_64_aarch64-linux-gnu.tar.xz"
-		"https://dl.armbian.com/_toolchains/gcc-linaro-5.5.0-2017.10-x86_64_arm-linux-gnueabi.tar.xz"
-		"https://dl.armbian.com/_toolchains/gcc-linaro-5.5.0-2017.10-x86_64_arm-linux-gnueabihf.tar.xz"
-		"https://dl.armbian.com/_toolchains/gcc-linaro-6.4.1-2017.11-x86_64_arm-linux-gnueabihf.tar.xz"
-		"https://dl.armbian.com/_toolchains/gcc-linaro-6.4.1-2017.11-x86_64_aarch64-linux-gnu.tar.xz"
-		"https://dl.armbian.com/_toolchains/gcc-linaro-7.4.1-2019.02-x86_64_arm-linux-gnueabihf.tar.xz"
-		"https://dl.armbian.com/_toolchains/gcc-linaro-7.4.1-2019.02-x86_64_arm-eabi.tar.xz"
-		"https://dl.armbian.com/_toolchains/gcc-linaro-7.4.1-2019.02-x86_64_arm-linux-gnueabi.tar.xz"
-		"https://dl.armbian.com/_toolchains/gcc-linaro-7.4.1-2019.02-x86_64_aarch64-linux-gnu.tar.xz"
+		"https://dl.armbian.com/_toolchain/gcc-linaro-aarch64-none-elf-4.8-2013.11_linux.tar.xz"
+		"https://dl.armbian.com/_toolchain/gcc-linaro-arm-none-eabi-4.8-2014.04_linux.tar.xz"
+		"https://dl.armbian.com/_toolchain/gcc-linaro-arm-linux-gnueabihf-4.8-2014.04_linux.tar.xz"
+		"https://dl.armbian.com/_toolchain/gcc-linaro-4.9.4-2017.01-x86_64_aarch64-linux-gnu.tar.xz"
+		"https://dl.armbian.com/_toolchain/gcc-linaro-4.9.4-2017.01-x86_64_arm-linux-gnueabi.tar.xz"
+		"https://dl.armbian.com/_toolchain/gcc-linaro-4.9.4-2017.01-x86_64_arm-linux-gnueabihf.tar.xz"
+		"https://dl.armbian.com/_toolchain/gcc-linaro-5.5.0-2017.10-x86_64_aarch64-linux-gnu.tar.xz"
+		"https://dl.armbian.com/_toolchain/gcc-linaro-5.5.0-2017.10-x86_64_arm-linux-gnueabi.tar.xz"
+		"https://dl.armbian.com/_toolchain/gcc-linaro-5.5.0-2017.10-x86_64_arm-linux-gnueabihf.tar.xz"
+		"https://dl.armbian.com/_toolchain/gcc-linaro-6.4.1-2017.11-x86_64_arm-linux-gnueabihf.tar.xz"
+		"https://dl.armbian.com/_toolchain/gcc-linaro-6.4.1-2017.11-x86_64_aarch64-linux-gnu.tar.xz"
+		"https://dl.armbian.com/_toolchain/gcc-linaro-7.4.1-2019.02-x86_64_arm-linux-gnueabihf.tar.xz"
+		"https://dl.armbian.com/_toolchain/gcc-linaro-7.4.1-2019.02-x86_64_arm-eabi.tar.xz"
+		"https://dl.armbian.com/_toolchain/gcc-linaro-7.4.1-2019.02-x86_64_arm-linux-gnueabi.tar.xz"
+		"https://dl.armbian.com/_toolchain/gcc-linaro-7.4.1-2019.02-x86_64_aarch64-linux-gnu.tar.xz"
 		)
 
 	for toolchain in ${toolchains[@]}; do
-		download_and_verify "_toolchains" "${toolchain##*/}"
+		download_and_verify "_toolchain" "${toolchain##*/}"
 	done
 
 	rm -rf $SRC/cache/toolchains/*.tar.xz*
