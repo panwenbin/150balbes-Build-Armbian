@@ -8,7 +8,7 @@ RUN sh -c  "if [ x"" != x$http_proxy ]; then \
 RUN echo "deb http://repo.aptly.info/ nightly main" > /etc/apt/sources.list.d/aptly.list
 RUN dpkg --add-architecture i386
 RUN apt update && DEBIAN_FRONTEND=noninteractive apt -y upgrade && \
-	DEBIAN_FRONTEND=noninteractive apt install -y git dialog lsb-release binutils wget ca-certificates device-tree-compiler \
+	DEBIAN_FRONTEND=noninteractive apt install -y git dialog libfdt-dev lsb-release binutils wget ca-certificates device-tree-compiler \
 	pv bc lzop zip binfmt-support build-essential ccache debootstrap ntpdate gawk gcc-arm-linux-gnueabihf \
 	qemu-user-static u-boot-tools uuid-dev zlib1g-dev unzip libusb-1.0-0-dev parted pkg-config libncurses5-dev whiptail \
 	debian-keyring debian-archive-keyring f2fs-tools libfile-fcntllock-perl rsync libssl-dev nfs-kernel-server btrfs-tools \
