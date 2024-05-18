@@ -779,7 +779,7 @@ prepare_host()
 		find $SRC/output $USERPATCHES_PATH -type d ! -group sudo -exec chgrp --quiet sudo {} \;
 		find $SRC/output $USERPATCHES_PATH -type d ! -perm -g+w,g+s -exec chmod --quiet g+w,g+s {} \;
 	fi
-	mkdir -p $DEST/debs-beta/extra $DEST/debs/extra $DEST/{config,debug,patch} $USERPATCHES_PATH/overlay $SRC/cache/{sources,toolchains,utility,rootfs} $SRC/.tmp
+	mkdir -p $DEST/debs-beta/extra $DEST/debs/extra $DEST/{config,debug,patch} $USERPATCHES_PATH/overlay $SRC/cache/{sources,toolchain,utility,rootfs} $SRC/.tmp
 
 	display_alert "Checking for external GCC compilers" "" "info"
 	# download external Linaro compiler and missing special dependencies since they are needed for certain sources
@@ -806,8 +806,8 @@ prepare_host()
 		download_and_verify "_toolchain" "${toolchain##*/}"
 	done
 
-	rm -rf $SRC/cache/toolchains/*.tar.xz*
-	local existing_dirs=( $(ls -1 $SRC/cache/toolchains) )
+	rm -rf $SRC/cache/toolchain/*.tar.xz*
+	local existing_dirs=( $(ls -1 $SRC/cache/toolchain) )
 	for dir in ${existing_dirs[@]}; do
 		local found=no
 		for toolchain in ${toolchains[@]}; do
@@ -817,7 +817,7 @@ prepare_host()
 		done
 		if [[ $found == no ]]; then
 			display_alert "Removing obsolete toolchain" "$dir"
-			rm -rf $SRC/cache/toolchains/$dir
+			rm -rf $SRC/cache/toolchain/$dir
 		fi
 	done
 
