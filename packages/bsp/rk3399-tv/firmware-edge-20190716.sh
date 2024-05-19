@@ -5,7 +5,7 @@ build_firmware-aml()
 {
 	display_alert "Merging and packaging linux $NAME_PKG" "@host" "info"
 
-	local plugin_repo="https://github.com/150balbes/pkg-aml"
+	local plugin_repo="https://github.com/panwenbin/150balbes-pkg-aml"
 	local plugin_dir=${NAME_PKG}
 	[[ -d $SRC/cache/sources/$plugin_dir ]] && rm -rf $SRC/cache/sources/$plugin_dir
 
